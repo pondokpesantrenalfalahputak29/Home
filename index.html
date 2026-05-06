@@ -693,6 +693,45 @@
             font-size: 0.85rem;
         }
 
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            font-size: 24px; /* Ukuran ikon */
+            color: #ccc; /* Warna default abu-abu elegan */
+            transition: all 0.3s ease;
+            
+        }
+
+        /* Efek Hover untuk masing-masing sosmed */
+        .social-icons .icon-ig:hover {
+            color: #E1306C; /* Warna Instagram */
+            transform: translateY(-5px); /* Efek melompat sedikit */
+        }
+
+        .social-icons .icon-tiktok:hover {
+            color: #00f2ea; /* Warna Tiktok (Cyan) */
+            text-shadow: 2px 2px #ff0050; /* Efek glitch khas Tiktok */
+            transform: translateY(-5px);
+        }
+
+        .social-icons .icon-yt:hover {
+            color: #FF0000; /* Warna Youtube */
+            transform: translateY(-5px);
+        }
+
+        /* Responsivitas Mobile */
+        @media screen and (max-width: 768px) {
+        .social-icons {
+            justify-content: center; /* Ikon ke tengah jika di HP */
+            gap: 25px; /* Jarak lebih lebar agar mudah diklik jari */
+        }
+    }
+
         /* ===================== PROFILE MOBILE PHOTO ===================== */
         .profile-mobile-photo {
             display: none;
@@ -1434,7 +1473,7 @@
             <div class="faq" data-aos="fade-up">
                 <details>
                     <summary>Kapan pendaftaran santri baru dibuka?</summary>
-                    <p>Pendaftaran dibuka dalam dua gelombang, yaitu 10–17 Mei 2026 dan 14–20 Juni 2026.</p>
+                    <p>Pendaftaran dibuka dalam dua gelombang, yaitu 10-17 Mei 2026 dan 14-20 Juni 2026.</p>
                 </details>
                 <details>
                     <summary>Apakah pendaftaran bisa dilakukan online?</summary>
@@ -1442,7 +1481,7 @@
                 </details>
                 <details>
                     <summary>Siapa yang bisa dihubungi untuk informasi lengkap?</summary>
-                    <p>Informasi lengkap bisa ditanyakan kepada panitia melalui nomor yang tercantum pada bagian kontak.</p>
+                    <p>Informasi lengkap bisa ditanyakan kepada panitia melalui nomor yang tercantum pada bagian kontak atau langsung klik icon WhatsApp.</p>
                 </details>
             </div>
         </div>
@@ -1463,27 +1502,51 @@
 
     <!-- FOOTER -->
     <footer>
-        <div class="footer-grid">
-            <div>
-                <h3>Pondok Pesantren Al-Falah Putak</h3>
-                <p>Membina santri agar berilmu, berakhlak, mandiri, dan bermanfaat bagi sesama.</p>
-            </div>
-            <div>
-                <h4>Kontak</h4>
-                <p>Email: ponpesalfalahputak29@gmail.com</p>
-                <p>WhatsApp: 0821 1870 2717</p>
-            </div>
-            <div>
-                <h4>Menu Cepat</h4>
-                <p><a href="#profil">Profil</a></p>
-                <p><a href="#pendaftaran">Pendaftaran</a></p>
-                <p><a href="#pendidikan">Pendidikan</a></p>
+    <div class="footer-grid">
+        <div>
+            <h3>Pondok Pesantren Al-Falah Putak</h3>
+            <p>Membina santri agar berilmu, berakhlak, mandiri, dan bermanfaat bagi sesama.</p>
+        </div>
+        <div>
+            <h4>Kontak</h4>
+            <p>Email: ponpesalfalahputak29@gmail.com</p>
+            <p>WhatsApp: 0821 1870 2717</p>
+        </div>
+        <div>
+            <h4>Lokasi</h4>
+            <p style="margin-bottom: 10px;">Putak, Kec. Gelumbang, Kab. Muara Enim, Sumatera Selatan 31171</p>
+            <!-- Google Maps Embed -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.472535948753!2d104.4988775!3d-3.2317075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3be788270928d7%3A0x235ec07539e7cd14!2sPondok%20Pesantren%20Al%20Falah%20Putak!5e0!3m2!1sid!2sid!4v1715012345678!5m2!1sid!2sid" 
+                    width="100%" 
+                    height="350" 
+                    style="border:0; border-radius: 8px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
-        <div class="copyright">
-            &copy; 2026 Jakastra Official. All Rights Reserved.
-        </div>
-    </footer>
+    </div>
+    <div>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/alfalah_putak/" target="_blank" class="icon-ig">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@alfalahputak" target="_blank" class="icon-tiktok">
+            <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.youtube.com/@al-falahputak" target="_blank" class="icon-yt">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div>
+</div>
+    
+    <div class="copyright">
+        &copy; 2026 Jakastra Official. All Rights Reserved.
+    </div>
+</footer>
 
     <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox" onclick="closeZoom()">
