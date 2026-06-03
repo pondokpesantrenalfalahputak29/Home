@@ -1795,6 +1795,7 @@
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-52CSEQDZKD"></script>
     <script>
         function openZoom(el) {
             const src = el.querySelector('img').src;
@@ -1845,6 +1846,12 @@
             navMenu.classList.remove('active');
             hamburger.innerHTML = '<i class="fas fa-bars"></i>';
         });
+
+        window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-52CSEQDZKD');
     </script>
 </body>
 
