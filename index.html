@@ -2,14 +2,6 @@
 <html lang="id">
 
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-52CSEQDZKD"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-52CSEQDZKD');
-    </script>
     <!-- ============================================================
      SEO LENGKAP - PSB Al-Falah Putak 2026/2027
      Target: https://pondokpesantrenalfalahputak29.github.io/Home/
@@ -1449,8 +1441,8 @@
                     class="btn-main" target="_blank">
                     <i class="fas fa-paper-plane"></i> Daftar Sekarang
                 </a>
-                <a href="#profil" class="btn-outline">
-                    <i class="fas fa-circle-info"></i> Lihat Profil
+                <a href="poster-pendaftaran.jpeg" download="Brosur-PSB-AlFalah-Putak-2026.jpeg" class="btn-outline">
+                    <i class="fas fa-download"></i> Unduh Brosur
                 </a>
             </div>
 
@@ -1507,8 +1499,9 @@
                 </div>
 
                 <div class="video-wrapper" data-aos="fade-left">
-                    <iframe src="https://www.youtube.com/embed/2i9aufgz98Q?si=U91Ayh41e60YlgYE"
-                        title="Profil Al-Falah Putak"
+                    <iframe src="https://www.youtube.com/embed/Rgm2x63aL40?si=BuAigr50Xn6gAyw1"
+                        title="YouTube video player"
+                        frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
@@ -1802,7 +1795,6 @@
         <img id="lightbox-img" src="Abah_ibu.png" alt="Foto Abah dan Ibu">
     </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         function openZoom(el) {
             const src = el.querySelector('img').src;
@@ -1820,11 +1812,24 @@
             if (e.key === 'Escape') closeZoom();
         });
 
-        AOS.init({
-            duration: 900,
-            once: true,
-            offset: 60
-        });
+        function initAOS() {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({ duration: 900, once: true, offset: 60 });
+            } else {
+                // Fallback: tampilkan semua elemen tanpa animasi jika AOS gagal load
+                document.querySelectorAll('[data-aos]').forEach(function(el) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                    el.removeAttribute('data-aos');
+                });
+            }
+        }
+
+        var aosScript = document.createElement('script');
+        aosScript.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
+        aosScript.onload = initAOS;
+        aosScript.onerror = initAOS;
+        document.head.appendChild(aosScript);
 
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
